@@ -1,0 +1,16 @@
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\bin\Debug\SetupNew.exe.config
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\bin\Debug\SetupNew.exe
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\bin\Debug\SetupNew.pdb
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.csproj.AssemblyReference.cache
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.csproj.SuggestedBindingRedirects.cache
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.Properties.Resources.resources
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.csproj.GenerateResource.cache
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.csproj.CoreCompileInputs.cache
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.exe
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.pdb
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.Forms.frmCommonSetting.resources
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.frmLogin.resources
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.Forms.frmTesting.resources
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\bin\Debug\Dapper.dll
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\bin\Debug\Dapper.xml
+D:\Vb application\GitApplicationRepository\Applications\C#\StanderedModule\SetupNew\obj\Debug\SetupNew.csproj.CopyComplete
