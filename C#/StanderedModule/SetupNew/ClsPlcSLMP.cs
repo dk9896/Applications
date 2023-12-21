@@ -12,7 +12,12 @@ using SetupNew.Models;
 public class ClsPlcSLMP
 {
     private bool AssignPLCData_Check1 = false;
-
+    private int[] Plcdata1 = new int[10000];
+    public int[] PLCData
+    {
+        get { return Plcdata1; }
+        set { Plcdata1 = value; }
+    }
     public bool AssignPLCData_Check
     {
         get { return AssignPLCData_Check1; }
@@ -21,7 +26,7 @@ public class ClsPlcSLMP
     private int RejCnt;
     private int count;
     public clsSLMP SLMPModel;
-
+    
     private Thread arival;
     private bool FIRST_CONNECTION;
     
@@ -47,13 +52,7 @@ public ClsPlcSLMP()
     evtDataArrival1 = new AsyncCallback(WinShock_DataArival1);
     evtDataSent1 = new AsyncCallback(WinShock_Datasent1);
 }
-
-private void Initialise1()
-{
-    
-}
-
-public void Connect(string ipaddress, string ipport)
+public void Connect()
 {
     //Initialise1();
     Timer1 = new Timer(timer1Delegate, autoevent1, 1000, 1000);
@@ -106,7 +105,7 @@ public void Connect_PLC1()
     }
 }
 
-public void GetReadArray1(int ReadStartAddress, int NoOfReadRegisters)
+public byte[] GetReadArray1(int ReadStartAddress, int NoOfReadRegisters)
 {
     byte[] Readstream1 = new byte[21];
     Readstream1[0] = 0x50;
@@ -130,9 +129,10 @@ public void GetReadArray1(int ReadStartAddress, int NoOfReadRegisters)
     Readstream1[18] = 0xA8; // D*
     Readstream1[19] = (byte)(NoOfReadRegisters % 256);
     Readstream1[20] = (byte)(NoOfReadRegisters / 256);
+        return Readstream1;
 }
 
-public void GetWriteArray1(int WriteStartAddress, int NoOfWriteRegisters)
+public byte[] GetWriteArray1(int WriteStartAddress, int NoOfWriteRegisters)
 {
     int k;
     int ArraySize;
@@ -178,10 +178,10 @@ public void GetWriteArray1(int WriteStartAddress, int NoOfWriteRegisters)
 
     for (int i = WriteStartAddress; i < J; i++)
     {
-        if (SLMPModel.PLCData[i] < 0)
-            data = (65536 + SLMPModel.PLCData[i]);
+        if (Plcdata1[i] < 0)
+            data = (65536 + Plcdata1[i]);
         else
-            data = SLMPModel.PLCData[i];
+            data = Plcdata1[i];
 
         Writestream[k] = (byte)(data % 256);
         k++;
@@ -189,6 +189,7 @@ public void GetWriteArray1(int WriteStartAddress, int NoOfWriteRegisters)
         Writestream[k] = (byte)(data / 256);
         k++;
     }
+        return Writestream;
 }
 
 private void timer1_tick(object sender)
@@ -208,24 +209,24 @@ private void timer1_tick(object sender)
             switch (SLMPModel.CommandType)
             {
                 case 1:
-                    GetReadArray1(SLMPModel.StdReadStartAddress, SLMPModel.StdReadCount);
+                    Readstream1 = GetReadArray1(SLMPModel.StdReadStartAddress, SLMPModel.StdReadCount);
                     network_stream.BeginWrite(Readstream1, 0, Readstream1.Length, evtDataSent1, network_stream);
                     SLMPModel.CVRead++;
                     SLMPModel.CommandOn = true;
                     Timer2.Change(3000, 3000);
                     break;
                 case 2:
-                    if (SLMPModel.PLCData[SLMPModel.StdWriteStartAddress + SLMPModel.StdWriteCount - 1] > 30000)
-                            SLMPModel.PLCData[SLMPModel.StdWriteStartAddress + SLMPModel.StdWriteCount - 1] = 0;
+                    if (Plcdata1[SLMPModel.StdWriteStartAddress + SLMPModel.StdWriteCount - 1] > 30000)
+                            Plcdata1[SLMPModel.StdWriteStartAddress + SLMPModel.StdWriteCount - 1] = 0;
                     else
-                            SLMPModel.PLCData[SLMPModel.StdWriteStartAddress + SLMPModel.StdWriteCount - 1]++;
-                    GetWriteArray1(SLMPModel.StdWriteStartAddress, SLMPModel.StdWriteCount);
+                            Plcdata1[SLMPModel.StdWriteStartAddress + SLMPModel.StdWriteCount - 1]++;
+                    Writestream = GetWriteArray1(SLMPModel.StdWriteStartAddress, SLMPModel.StdWriteCount);
                     network_stream.BeginWrite(Writestream, 0, Writestream.Length, evtDataSent1, network_stream);
                         SLMPModel.CommandOn = true;
                     Timer2.Change(3000, 3000);
                     break;
                 case 3:
-                    GetReadArray1((SLMPModel.ExtendedReadStartAddress + (SLMPModel.ExtendedReadCount * SLMPModel.CVExtPktNo)), SLMPModel.ExtendedReadCount);
+                    Readstream1 = GetReadArray1((SLMPModel.ExtendedReadStartAddress + (SLMPModel.ExtendedReadCount * SLMPModel.CVExtPktNo)), SLMPModel.ExtendedReadCount);
                     network_stream.BeginWrite(Readstream1, 0, Readstream1.Length, evtDataSent1, network_stream);
                     SLMPModel.CommandOn = true;
                     Timer2.Change(3000, 3000);
@@ -322,7 +323,7 @@ private void WinShock_DataArival1(IAsyncResult dr)
             {
                 case 1:
                     k = SLMPModel.StdReadCount * 2;
-                    ExpectedArraySize = k + 10;
+                    ExpectedArraySize = k + 11;
 
                     if (SocketData.Length == ExpectedArraySize)
                     {
@@ -345,7 +346,7 @@ private void WinShock_DataArival1(IAsyncResult dr)
                                     Idata1 = Idata;
                                 }
 
-                                SLMPModel.PLCData[i] = (int)Idata1;
+                                Plcdata1[i] = (int)Idata1;
                                 J += 2;
                             }
 
@@ -354,12 +355,12 @@ private void WinShock_DataArival1(IAsyncResult dr)
                                 SLMPModel.CommandType = 2;
                             }
 
-                            if (((SLMPModel.CVRead >= SLMPModel.WriteDelayCount) && ((SLMPModel.PLCData[SLMPModel.StdReadStartAddress + SLMPModel.StdReadCount - 1] == 0) || (SLMPModel.ExtendedRequired == false))))
+                            if (((SLMPModel.CVRead >= SLMPModel.WriteDelayCount) && ((Plcdata1[SLMPModel.StdReadStartAddress + SLMPModel.StdReadCount - 1] == 0) || (SLMPModel.ExtendedRequired == false))))
                             {
                                 SLMPModel.CVRead = 0;
                             }
 
-                            if ((SLMPModel.ExtendedRequired == true) && (SLMPModel.PLCData[SLMPModel.StdReadStartAddress + SLMPModel.StdReadCount - 1] > 0))
+                            if ((SLMPModel.ExtendedRequired == true) && (Plcdata1[SLMPModel.StdReadStartAddress + SLMPModel.StdReadCount - 1] > 0))
                             {
                                     SLMPModel.CommandType = 3;
                                     SLMPModel.CVExtPktNo = 0;
@@ -419,7 +420,7 @@ private void WinShock_DataArival1(IAsyncResult dr)
                                     Idata1 = Idata;
                                 }
 
-                                SLMPModel.PLCData[i] = (int)Idata1;
+                                Plcdata1[i] = (int)Idata1;
                                 J += 2;
                             }
 

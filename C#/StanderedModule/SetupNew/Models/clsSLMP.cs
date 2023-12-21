@@ -23,7 +23,6 @@ namespace SetupNew.Models
         public int WriteDelayCount { get; set; } = 1;
         public int CVRead { get; set; } = 0;
         public int CommandType { get; set; } = 1;
-        public int[] PLCData { get; set; } = new int[10000];
         public bool PLC_Communication_Error { get; set; } = true;
         public string IPAddress { get; set; }
         public int PortNo { get; set; }

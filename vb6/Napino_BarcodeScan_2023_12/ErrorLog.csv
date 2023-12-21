@@ -1,0 +1,6 @@
+ErrDate,ErrTime,ErrNumber,Error,ErrLine,ErrPlace,Hint
+03-11-2023,03:03:25 PM,13,Type mismatch---,0,frmMonitor,Assign PLC Data
+03-11-2023,03:12:49 PM,-2147217904,No value given for one or more required parameters.---,0,frmMonitor,Assign PLC Data
+03-11-2023,03:15:09 PM,-2147217904,No value given for one or more required parameters.---,0,frmMonitor,Assign PLC Data
+03-11-2023,03:19:29 PM,-2147217904,No value given for one or more required parameters.---,0,frmMonitor,Assign PLC Data
+07-11-2023,07:22:03 PM,3704,Operation is not allowed when the object is closed.,0,frmMonitor,LoadSettingsData

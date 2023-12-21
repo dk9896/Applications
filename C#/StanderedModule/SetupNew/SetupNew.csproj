@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SetupNew.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Dapper.2.0.151\lib\net461\Dapper.dll</HintPath>
@@ -87,8 +90,17 @@
     <Compile Include="Forms\frmUserAccess.Designer.cs">
       <DependentUpon>frmUserAccess.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\clsSLMP.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\UserWithAccess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\ITestingDb.cs" />
@@ -109,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTesting.resx">
       <DependentUpon>frmTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

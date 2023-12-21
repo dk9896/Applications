@@ -82,7 +82,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.tabCommunication = new System.Windows.Forms.TabPage();
+            this.tabPLC = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.tabEmail = new System.Windows.Forms.TabPage();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -93,10 +97,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabShift.SuspendLayout();
@@ -105,7 +107,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabCommunication.SuspendLayout();
+            this.tabPLC.SuspendLayout();
             this.tabEmail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,13 +124,13 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabShift);
-            this.tabControl1.Controls.Add(this.tabCommunication);
+            this.tabControl1.Controls.Add(this.tabPLC);
             this.tabControl1.Controls.Add(this.tabEmail);
             this.tabControl1.Location = new System.Drawing.Point(29, 81);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(755, 538);
+            this.tabControl1.Size = new System.Drawing.Size(854, 538);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 68;
             // 
@@ -665,19 +667,61 @@
             this.label22.TabIndex = 49;
             this.label22.Text = "Start Time";
             // 
-            // tabCommunication
+            // tabPLC
             // 
-            this.tabCommunication.BackColor = System.Drawing.Color.Gray;
-            this.tabCommunication.Controls.Add(this.textBox2);
-            this.tabCommunication.Controls.Add(this.textBox1);
-            this.tabCommunication.Controls.Add(this.label36);
-            this.tabCommunication.Controls.Add(this.label35);
-            this.tabCommunication.Location = new System.Drawing.Point(4, 22);
-            this.tabCommunication.Name = "tabCommunication";
-            this.tabCommunication.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCommunication.Size = new System.Drawing.Size(747, 512);
-            this.tabCommunication.TabIndex = 1;
-            this.tabCommunication.Text = "Communication Setting";
+            this.tabPLC.BackColor = System.Drawing.Color.Gray;
+            this.tabPLC.Controls.Add(this.button2);
+            this.tabPLC.Controls.Add(this.button1);
+            this.tabPLC.Controls.Add(this.textBox2);
+            this.tabPLC.Controls.Add(this.textBox1);
+            this.tabPLC.Controls.Add(this.label36);
+            this.tabPLC.Controls.Add(this.label35);
+            this.tabPLC.Location = new System.Drawing.Point(4, 22);
+            this.tabPLC.Name = "tabPLC";
+            this.tabPLC.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPLC.Size = new System.Drawing.Size(846, 512);
+            this.tabPLC.TabIndex = 1;
+            this.tabPLC.Text = "PLC Setting";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(365, 40);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(119, 22);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(133, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(141, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label36.Location = new System.Drawing.Point(307, 42);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(52, 16);
+            this.label36.TabIndex = 1;
+            this.label36.Text = "Port No";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label35.Location = new System.Drawing.Point(30, 40);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(73, 16);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "IP Address";
             // 
             // tabEmail
             // 
@@ -780,45 +824,24 @@
             this.label1.Text = "Common Setting";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label35
+            // button1
             // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label35.Location = new System.Drawing.Point(30, 40);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(101, 16);
-            this.label35.TabIndex = 0;
-            this.label35.Text = "PLC IP Address";
+            this.button1.Location = new System.Drawing.Point(567, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 34);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label36
+            // button2
             // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label36.Location = new System.Drawing.Point(30, 74);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(80, 16);
-            this.label36.TabIndex = 1;
-            this.label36.Text = "PLC Port No";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(163, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(185, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(119, 22);
-            this.textBox2.TabIndex = 3;
+            this.button2.Location = new System.Drawing.Point(567, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(62, 34);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmCommonSetting
             // 
@@ -842,8 +865,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabCommunication.ResumeLayout(false);
-            this.tabCommunication.PerformLayout();
+            this.tabPLC.ResumeLayout(false);
+            this.tabPLC.PerformLayout();
             this.tabEmail.ResumeLayout(false);
             this.tabEmail.PerformLayout();
             this.ResumeLayout(false);
@@ -907,7 +930,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TabPage tabCommunication;
+        private System.Windows.Forms.TabPage tabPLC;
         private System.Windows.Forms.TabPage tabEmail;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
@@ -921,5 +944,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

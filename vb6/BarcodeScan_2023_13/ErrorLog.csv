@@ -1,0 +1,2 @@
+ErrDate,ErrTime,ErrNumber,Error,ErrLine,ErrPlace,Hint
+02-11-2023,07:53:22 AM,424,Object required---,0,frmMonitor,Assign PLC Data

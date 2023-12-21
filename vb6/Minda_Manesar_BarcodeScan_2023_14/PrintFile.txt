@@ -1,0 +1,4 @@
+ModelNameGogoro
+DrawingNo-1
+573
+00000

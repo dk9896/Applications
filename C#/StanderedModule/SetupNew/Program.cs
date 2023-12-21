@@ -17,7 +17,7 @@ namespace SetupNew
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCommonSetting());
+            Application.Run(new TestForm());
         }
     }
 }

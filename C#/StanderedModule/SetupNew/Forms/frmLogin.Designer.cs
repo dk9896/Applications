@@ -119,6 +119,7 @@
             this.btnLogin.Size = new System.Drawing.Size(153, 70);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnClose
             // 
@@ -144,7 +145,7 @@
             this.lblMassage.Size = new System.Drawing.Size(0, 13);
             this.lblMassage.TabIndex = 8;
             // 
-            // Form1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +160,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLoging);
-            this.Name = "Form1";
+            this.Name = "frmLogin";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

@@ -1,0 +1,21 @@
+ErrDate,ErrTime,ErrNumber,Error,ErrLine,ErrPlace,Hint
+02-11-2023,07:53:22 AM,424,Object required---,0,frmMonitor,Assign PLC Data
+20-12-2023,05:29:48 PM,3265,Item cannot be found in the collection corresponding to the requested name or ordinal.,0,frmMonitor,LoadSettingsData
+20-12-2023,05:29:48 PM,3265,Item cannot be found in the collection corresponding to the requested name or ordinal.,0,frmMonitor,LoadSettingsData
+20-12-2023,05:29:48 PM,3265,Item cannot be found in the collection corresponding to the requested name or ordinal.,0,frmMonitor,LoadSettingsData
+20-12-2023,05:30:05 PM,3265,Item cannot be found in the collection corresponding to the requested name or ordinal.,0,frmsettings,LoadData
+20-12-2023,05:30:05 PM,3265,Item cannot be found in the collection corresponding to the requested name or ordinal.,0,frmsettings,LoadData
+20-12-2023,05:30:05 PM,3265,Item cannot be found in the collection corresponding to the requested name or ordinal.,0,frmsettings,LoadData
+20-12-2023,05:31:35 PM,424,Object required,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '1' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '2' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '3' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '4' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '5' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '6' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '7' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '8' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '9' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '10' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '11' doesn't exist,0,frmsettings,Save Model Setting
+20-12-2023,05:31:35 PM,340,Control array element '12' doesn't exist,0,frmsettings,Save Model Setting
